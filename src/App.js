@@ -7,10 +7,17 @@ import About from './component/about';
 
 
 function App() {
- const [mode] = useState('dark');
+ const [mode,setMode] = useState('light');
+ const toggleMode = () =>{
+  if(mode === 'light'){
+    setMode('dark');
+  }
+  else
+  setMode('light');
+ }
   return (
     <>
-    <Navbar title="hi"  mode ={mode}/>
+    <Navbar title="hi"  mode ={mode} toggleMode={toggleMode}/>
     <div className='container my-2'>
       <About />
       {/* <TextForm></TextForm> */}
