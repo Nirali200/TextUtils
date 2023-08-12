@@ -3,13 +3,18 @@ export default function TextForm(props) {
     const handleUp = ()=>{
         let v=text.toLocaleUpperCase();
         setText(v);
+        props.setalert("Converted to upercase","success");
     }
     const handleLow = ()=>{
         let v=text.toLocaleLowerCase();
         setText(v);
+        props.setalert("Converted to lowercase","success");
+
     }
     const handleClear = ()=>{
         setText("");
+        props.setalert("Cleared!","success")
+
     }
     const handleOn = (event)=>{
     
@@ -25,7 +30,7 @@ export default function TextForm(props) {
 </div>
 <button className="btn-primary mx-1" onClick={handleUp}>Convert to Upercase</button>
 <button className="btn-primary mx-1" onClick={handleLow}>Convert to Lowercase</button>
-<button className="btn-primary mx-1" onClick={handleClear}>Clear Text</button>
+<button className="btn-primary mx-1" onClick={handleClear}>Clear Text</button>  
 </div>
 <div className='container my-3' style={{color:props.mode === 'light'?'rgb(22 3 53)':'white'}}>
     <h2>Your text summary</h2>
