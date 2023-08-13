@@ -2,9 +2,16 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './component/Navbar';
-// import About from './component/about';
+import About from './component/about';
 import TextForm from './component/textForm';
 import Alert from './component/Alert';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "./react-router-dom";
 
 function App() {
  const [mode,setMode] = useState('light');
@@ -35,11 +42,19 @@ setTimeout( ()=>{
     <>
     <Navbar title="hi"  mode ={mode} toggleMode={toggleMode}/>
     <Alert Alert={alert}/>
+    <Router>
     <div className='container my-2'>
-      {/* <About /> */}
+    <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
       <TextForm    heading ="Enter Text Here" setalert ={setalert} mode ={mode}/>
-
+          </Route>
+        </Switch>
+      <About/>
     </div>
+    </Router>
 </>
   );
 }
