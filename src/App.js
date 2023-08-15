@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './component/Navbar';
-// import About from './component/about';
+import About from './component/about';
 import TextForm from './component/textForm';
 import Alert from './component/Alert';
 import React from "react";
@@ -37,7 +37,7 @@ setTimeout( ()=>{
     <Alert Alert={alert}/>
     <div className='container my-2'>
       <TextForm    heading ="Enter Text Here" setalert ={setalert} mode ={mode}/>
-      {/* <About/> */}
+      <About heading ="About Us" mode ={mode}/>
     </div>
 </>
   );
