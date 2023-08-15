@@ -21,6 +21,11 @@ export default function TextForm(props) {
     
         setText(event.target.value)
     }
+    const handleCopy = (event)=>{
+    
+      setText(text)
+      props.setalert("Text Copied!","success")
+  }
     const [text, setText] = useState("");
   return (
     <>
@@ -33,6 +38,7 @@ export default function TextForm(props) {
 <button disabled={text.length===0} className="btn-primary mx-1 my-1" onClick={handleUp}>Convert to Upercase</button>
 <button disabled={text.length===0} className="btn-primary mx-1 my-1" onClick={handleLow}>Convert to Lowercase</button>
 <button disabled={text.length===0} className="btn-primary mx-1 my-1" onClick={handleClear}>Clear Text</button>  
+<button disabled={text.length===0} className="btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>  
 </div>
 <div className='container my-3' style={{color:props.mode === 'light'?'rgb(22 3 53)':'white'}}>
     <h2>Your text summary</h2>
